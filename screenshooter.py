@@ -43,7 +43,7 @@ main_grp = parser.add_argument_group('Main parameters')
 main_grp.add_argument('URL', help='Single URL target given as a positional argument', nargs='?')
 main_grp.add_argument('-i', '--input-file', help='<INPUT_FILE> text file containing the target list. Ex: list.txt')
 main_grp.add_argument('--subfinder-input', help='<SUBFINDER_INPUT> (optional): JSON output file from subfinder', type=str)
-main_grp.add_argument('-o', '--output-directory', help='<OUTPUT_DIRECTORY> (optional): screenshots output directory (default \'./screenshots/\')')
+main_grp.add_argument('-o', '--output-directory', help='<OUTPUT_DIRECTORY> (optional): screenshots output directory (default \'./output/\')')
 main_grp.add_argument('-w', '--workers', help='<WORKERS> (optional): number of parallel execution workers (default 4)', default=4)
 main_grp.add_argument('-v', '--verbosity', help='<VERBOSITY> (optional): verbosity level, repeat to increase { -v INFO, -vv DEBUG } (default ERROR)', action='count', default=0)
 main_grp.add_argument('--no-error-file', help='<NO_ERROR_FILE> (optional): do not write a file with the list of failed URLs (default false)', action='store_true', default=False)
@@ -98,8 +98,8 @@ XVFB_BIN = "xvfb-run -a"
 IMAGEMAGICK_BIN = "convert"
 
 SCREENSHOOTER_JS = os.path.abspath(os.path.join(os.path.dirname(__file__), './screenshooter.js'))
-SCREENSHOTS_DIRECTORY = os.path.abspath(os.path.join(os_getcwd(), './screenshots/'))
-FAILED_SCREENSHOTS_FILE = os.path.abspath(os.path.join(os_getcwd(), './screenshots_failed.txt'))
+SCREENSHOTS_DIRECTORY = os.path.abspath(os.path.join(os_getcwd(), './output/'))
+FAILED_SCREENSHOTS_FILE = os.path.abspath(os.path.join(os_getcwd(), './failed_screenshots.txt'))
 
 # Logger definition
 LOGLEVELS = {0: 'ERROR', 1: 'INFO', 2: 'DEBUG'}

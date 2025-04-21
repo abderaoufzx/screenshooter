@@ -20,7 +20,7 @@ async function takeScreenshot(params) {
         const url = params.url_capture;
         const outputFile = params.output_file;
         const [width, height] = params.window_size.split(',').map(Number);
-        const timeout = Number(params.timeout) * 1000;
+        const timeout = 1500
 
         await page.setViewport({ width, height });
         await page.setExtraHTTPHeaders(params.headers || {});

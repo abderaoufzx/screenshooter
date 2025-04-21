@@ -6,7 +6,7 @@
 
 - **Screenshot Capture**: Supports multiple renderers (PhantomJS, Chrome, Chromium, EdgeChromium, Firefox) with configurable options like window size, timeout, and HTTP headers.
 - **Parallel Processing**: Uses multiprocessing to capture screenshots concurrently, with configurable worker threads.
-- **Metadata Collection**: Saves detailed metadata (URL, status, headers, title, errors) in `screenshots/results.json`.
+- **Metadata Collection**: Saves detailed metadata (URL, status, headers, title, errors) in `output/results.json`.
 - **Automatic Report Generation**: Generates an HTML report (`report.html`) with a dark-themed, interactive UI:
   - **Pagination**: Displays 20 screenshots per page.
   - **Filtering**: Filter by HTTP status (e.g., 200, 404).
@@ -94,7 +94,7 @@ Main parameters:
   -i, --input-file      Text file containing the target list (e.g., list.txt)
   --subfinder-input     JSON output file from subfinder
   -o, --output-directory
-                        Screenshots output directory (default: ./screenshots/)
+                        Screenshots output directory (default: ./output/)
   -w, --workers         Number of parallel execution workers (default: 4)
   -v, --verbosity       Verbosity level {-v INFO, -vv DEBUG} (default: ERROR)
   --no-error-file       Do not write a file with failed URLs
@@ -147,7 +147,7 @@ Connection parameters:
   python3 webscreenshot.py -i urls.txt -r chromium -vv --no-xserver -w 4 -t 30
   ```
 
-  - Processes URLs in `urls.txt`, saves screenshots to `screenshots/`, generates `results.json`, and creates `report.html`.
+  - Processes URLs in `urls.txt`, saves screenshots to `output/`, generates `results.json`, and creates `report.html`.
 
 - **Single URL**:
 
@@ -169,8 +169,8 @@ Connection parameters:
 
 ### Output
 
-- **Screenshots**: Saved in `screenshots/` (e.g., `http_example.com.png`).
-- **Metadata**: `screenshots/results.json` with URL, screenshot path, status, headers, title, and errors.
+- **Screenshots**: Saved in `output/` (e.g., `http_example.com.png`).
+- **Metadata**: `output/results.json` with URL, screenshot path, status, headers, title, and errors.
 - **Report**: `report.html` with a dark-themed, interactive UI.
 - **Failed URLs**: `screenshots_failed.txt` (unless `--no-error-file` is used).
 
@@ -198,7 +198,7 @@ The generated `report.html` includes:
   - Run `generate_report.py` manually:
 
     ```bash
-    python3 generate_report.py screenshots/results.json -o report.html
+    python3 generate_report.py output/results.json -o report.html
     ```
 - **Styling issues**:
   - Verify internet connectivity for Tailwind CSS CDN (`https://cdn.tailwindcss.com`).
