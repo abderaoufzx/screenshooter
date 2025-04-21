@@ -1,2 +1,0 @@
-https://ss2-device.manage.dell.com:443/
-https://view.syddsc.apj.dell.com:443/
